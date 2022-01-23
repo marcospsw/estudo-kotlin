@@ -7,6 +7,8 @@ fun main() {
     contaMarcos.sacar(25.0)
 
     contaMarcos.transferir(contaAlex, 15.0)
+
+    println("TESTANDO GIT INTELIJ")
 }
 
 class Conta(
