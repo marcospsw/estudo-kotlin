@@ -28,6 +28,8 @@ class Conta(
         println("INCIANDO SAQUE")
         if (this.saldo < saque) {
             println("SALDO INDISPONÍVEL")
+            println("Saldo disponível: $this.saldo")
+            println("Valor do saque a ser realizado: $saque")
             return
         }
         this.saldo -= saque
