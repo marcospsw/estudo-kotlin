@@ -1,3 +1,5 @@
+package model.funcionario
+
 class Analista(
     nome: String,
     cpf: String,

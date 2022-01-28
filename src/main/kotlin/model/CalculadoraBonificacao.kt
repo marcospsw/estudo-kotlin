@@ -1,3 +1,7 @@
+package model
+
+import model.funcionario.Funcionario
+
 class CalculadoraBonificacao {
     private var total: Double = 0.0
 

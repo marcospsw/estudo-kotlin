@@ -1,3 +1,5 @@
+package services
+
 fun exercicioIfWhen(balance: Double) {
     if (balance > 0.0) {
         println("Conta Positiva")

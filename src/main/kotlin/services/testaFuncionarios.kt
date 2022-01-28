@@ -1,3 +1,10 @@
+package services
+
+import model.CalculadoraBonificacao
+import model.funcionario.Analista
+import model.funcionario.Diretor
+import model.funcionario.Gerente
+
 fun testaFuncionarios() {
     val funcionario = Analista(nome = "FuncionarioAnalista", cpf = "111.111.111-11", salario = 1000.0)
 
@@ -14,7 +21,13 @@ fun testaFuncionarios() {
     println("Bonificação: ${gerente.bonificar}")
     println("Autentiquei: ${gerente.autenticar(1234)}")
 
-    val diretor = Diretor(nome = "Diretor", cpf = "333.333.333-33", salario = 4000.0, senha = 456, plr = 1000.00)
+    val diretor = Diretor(
+        nome = "Diretor",
+        cpf = "333.333.333-33",
+        salario = 4000.0,
+        senha = 456,
+        plr = 1000.00
+    )
 
     println("Nome: ${diretor.nome}")
     println("CPF: ${diretor.cpf}")

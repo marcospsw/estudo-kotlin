@@ -1,30 +1,33 @@
-open class Conta(
-    val titular: String,
+package model.conta
+
+import model.cliente.Cliente
+
+abstract class Conta(
+    val titular: Cliente,
     val numeroConta: Int,
     saldo: Double = 0.0
 ) {
     var saldo = saldo
-        private set
+        protected set
+
+    companion object {
+        var total = 0
+            private set
+    }
+
+    init {
+        total++
+        println("Total de contas: $total")
+    }
 
     fun depositar(deposito: Double) {
         println("INCIANDO DEPOSITO")
         this.saldo += deposito
-        println("Conta: ${this.titular}")
+        println("model.conta.Conta: ${this.titular}")
         println("Saldo: ${this.saldo}")
     }
 
-    open fun sacar(saque: Double) {
-        println("INCIANDO SAQUE")
-        if (this.saldo < saque) {
-            println("SALDO INDISPONÍVEL")
-            println("Saldo disponível: $this.saldo")
-            println("Valor do saque a ser realizado: $saque")
-            return
-        }
-        this.saldo -= saque
-        println("Conta: ${this.titular}")
-        println("Saldo: ${this.saldo}")
-    }
+    abstract fun sacar(saque: Double)
 
     fun transferir(contaDestino: Conta, valor: Double) {
         println("INCIANDO TRANSFERÊNCIA")
