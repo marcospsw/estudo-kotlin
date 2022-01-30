@@ -1,5 +1,6 @@
 package model.conta
 
+import exception.SaldoInsuficienteException
 import model.cliente.Cliente
 
 abstract class Conta(
@@ -32,8 +33,7 @@ abstract class Conta(
     fun transferir(contaDestino: Conta, valor: Double) {
         println("INCIANDO TRANSFERÊNCIA")
         if (this.saldo < valor) {
-            println("SALDO INDISPONÍVEL")
-            return
+            throw SaldoInsuficienteException()
         }
         this.saldo -= valor
         contaDestino.saldo += valor
@@ -43,3 +43,4 @@ abstract class Conta(
         println("ContaDestino Saldo: ${contaDestino.saldo}")
     }
 }
+

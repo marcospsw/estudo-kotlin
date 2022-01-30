@@ -1,5 +1,6 @@
 package services
 
+import exception.SaldoInsuficienteException
 import model.cliente.Cliente
 import model.conta.ContaCorrente
 import model.conta.ContaPoupanca
@@ -25,5 +26,9 @@ fun testaComportamentosConta() {
     contaPoupanca.depositar(50.0)
     contaPoupanca.sacar(25.0)
 
-    contaCorrente.transferir(contaPoupanca, 15.0)
+    try {
+        contaCorrente.transferir(contaPoupanca, 800.0)
+    } catch (e: SaldoInsuficienteException) {
+        e.printStackTrace()
+    }
 }
