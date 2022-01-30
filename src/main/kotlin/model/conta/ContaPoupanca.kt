@@ -16,7 +16,7 @@ class ContaPoupanca(
             return
         }
         this.saldo -= saque
-        println("model.conta.Conta: ${this.titular}")
+        println("Conta: ${this.titular.nome}")
         println("Saldo: ${this.saldo}")
     }
 }

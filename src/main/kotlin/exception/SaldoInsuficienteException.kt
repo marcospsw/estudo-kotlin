@@ -1,3 +1,3 @@
 package exception
 
-class SaldoInsuficienteException : Exception("Saldo Insuficiente")
+class SaldoInsuficienteException(mensagem: String = "O saldo é insuficiente") : Exception(mensagem)

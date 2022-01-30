@@ -16,7 +16,7 @@ class ContaCorrente(
             return
         }
         this.saldo -= saque - 0.3
-        println("model.conta.Conta: ${this.titular}")
+        println("Conta: ${this.titular.nome}")
         println("Saldo: ${this.saldo}")
     }
 }

@@ -1,5 +1,6 @@
 package services
 
+import exception.FalhaAutenticacaoException
 import exception.SaldoInsuficienteException
 import model.cliente.Cliente
 import model.conta.ContaCorrente
@@ -14,7 +15,7 @@ fun testaComportamentosConta() {
     println("INICIANDO OPERAÇÕES")
     contaMarcos.depositar(50.0)
     contaMarcos.sacar(25.0)
-    contaMarcos.transferir(contaAlex, 15.0)
+    contaMarcos.transferir(contaAlex, 15.0, 123)
 
     val contaCorrente = ContaCorrente(cliente, 157)
     val contaPoupanca = ContaPoupanca(cliente, 123, 15.0)
@@ -27,8 +28,13 @@ fun testaComportamentosConta() {
     contaPoupanca.sacar(25.0)
 
     try {
-        contaCorrente.transferir(contaPoupanca, 800.0)
+        contaCorrente.transferir(contaPoupanca, 10.0, 157)
     } catch (e: SaldoInsuficienteException) {
+        e.printStackTrace()
+    } catch (e: FalhaAutenticacaoException) {
+        e.printStackTrace()
+    } catch (e: Exception) {
+        println("Erro Desconhecido!!!")
         e.printStackTrace()
     }
 }

@@ -97,3 +97,13 @@
     - Propriedades de uma exception(message, stacktrace, cause)
     - Printa as tres propriedades acima (printStackTrace)
     - Variaveis podem receber o try/catch ou if
+    - Pode ser feito mais de um catch para um try
+    - Ao lidar com erro desconhecido usar Exception genérica, coloca-la por ultimo
+- **Referências Nulas**
+    - Caso ocorra um erro de referência nula, irá retornar um NullPointerException
+    - Not Null Operator(Cast que garante a presença de valor numa variavel opcional "!!")
+    - Safe Call(Adicionando um "?" antes do seugndo nível da variavel podemos garantir que não havera erro de compilação
+      caso a variavel seja nula)
+    - Let(Safe call que garante a execução somente se a variavel não for nula)
+    - Elvis Operator(Permite adicionar retorno específico caso a variavel seja nula ? varaivel :? retorno)
+    - Safe Cast(Garante que caso a variavel n seja daquele tipo, retornar nulo "as?")
