@@ -107,3 +107,10 @@
     - Let(Safe call que garante a execução somente se a variavel não for nula)
     - Elvis Operator(Permite adicionar retorno específico caso a variavel seja nula ? varaivel :? retorno)
     - Safe Cast(Garante que caso a variavel n seja daquele tipo, retornar nulo "as?")
+
+### Lições aprendidas sobre Programação Funcional no Kotlin (Parte 5)
+- **Arrays**
+    - Para declarar um Array usamos "TipoArray(tamanho_array)"
+    - Para declarar um Array sem a necessidade de colocar o tamanho dele "tipoArrayOf(elemento1, elemento2)"
+    - Para percorrer array com for "for(atribuição in array){}"
+    - 
