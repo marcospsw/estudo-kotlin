@@ -109,8 +109,41 @@
     - Safe Cast(Garante que caso a variavel n seja daquele tipo, retornar nulo "as?")
 
 ### Lições aprendidas sobre Programação Funcional no Kotlin (Parte 5)
+
 - **Arrays**
     - Para declarar um Array usamos "TipoArray(tamanho_array)"
+    - Para declarar um Array de tipos não primitivos "Array<TipoArray>(tamanho_array)"
     - Para declarar um Array sem a necessidade de colocar o tamanho dele "tipoArrayOf(elemento1, elemento2)"
     - Para percorrer array com for "for(atribuição in array){}"
-    - 
+    - Para declarar um range podemos usar "rangeTo, .., downTo"
+- **Funções Agregadoras**
+    - Para pegar um valor maximo "array.max()"
+    - Para pegar um valor mínimo "array.min()"
+    - Para pegar a média "array.average()"
+    - Para pegar a soma "array.sum()"
+    - Para testar se todas os atributos do array satifazem aquela condição "array.all {condição}" retornando um boolean
+    - Para testar se algum dos atributos do array satifazem aquela condição "array.any {condição}" retornando um boolean
+    - Para retornar os atributos do array satifazem aquela condição "array.filter {valor -> condição}"
+    - Para retornar o primeiro atributo do array que satifaz aquela condição "array.find {valor -> condição}"
+    - Para retornar os atributos depois de serem processados "array.map {iteração}"
+    - Para declarar funções extensivas ao tipo "Array<TipoArray>.nome_função(): retorno{}"
+    - Para retornar valores acumulados "array.reduce {acc, valor -> iteração}"
+    - Para retornar valores acumulados mais valor inicial "array.fold(valor_inicial) {acc, valor -> iteração}"
+    - Para retornar valores ordenados do maior pro menor "array.sorted()"
+    - Para primeiros valores ordenados "array.take(quantidade)"
+    - Para ultimos valores ordenados "array.takeLast(quantidade)"
+    - Para converter de Lista para Array, "val variavel: Array<TipoDesejado> = lista.toTypedArray()"
+- **Listas**
+    - Só podem ter lista de objetos não existe lista de tipos primitivos
+    - Para declarar uma lista MUTÁVEL usamos "mutableListOf(objeto1, objeto2, objeto3)"
+        - lista.add(adiciona um objeto a lista)
+        - lista.remove(remove um objeto da lista)
+    - Para declarar uma lista IMUTÁVEL "listOf(objeto1, objeto2, objeto3)"
+    - Para ondernar uma Lista a classe do Objeto criado de extender de Comparable e implementar o metodo sorted
+    - Para ondernar uma Lista manipulando a mesma também podemos usar "lista.sortBy {it.atributo}"
+    - Para ondernar uma Lista criando uma nova lista podemos usar "lista.sortedBy {it.atributo}"
+    - Para retornar os objetos do array satifazem aquela condição "lista.filter {valor -> condição}"
+    - Declarar um lista com possíveis nulos "lista?"
+    - Para filtrar elementos não nulos de uma lista "lista.filterNotNull()"
+    - Para agrupar uma lista por um atributo em específico "lista.groupBy {atributo}"
+

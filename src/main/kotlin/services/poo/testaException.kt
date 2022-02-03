@@ -1,6 +1,6 @@
-package services
+package services.poo
 
-fun testaException(){
+fun testaException() {
     try {
         lancandoException()
     } catch (e: TestaExceptionCustom) {
