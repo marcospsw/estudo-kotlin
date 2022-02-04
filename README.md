@@ -147,3 +147,50 @@
     - Para filtrar elementos não nulos de uma lista "lista.filterNotNull()"
     - Para agrupar uma lista por um atributo em específico "lista.groupBy {atributo}"
 
+### Lições aprendidas sobre Programação Funcional no Kotlin (Parte 6)
+
+- **Coleções**
+    - Iterable -> Collection -> List e Set
+    - MutableIterable -> MutableCollection -> MutableList e MutableSet
+    - Tomar cuidado ao trabalhar com coleções para n ferir os princípios da POO
+    - Usando o "lista.toList()" devolvemos uma cópia do objeto ao invés da referência do mesmo
+    - Para concatenar listas podemos usar "novaLista.addAll(element1+element2+...)"
+    - Para eleminar-mos os elementos repetidos de uma lista podemos usar "lista.distinct()"
+- **Sets**
+    - Conjunto de elementos (Similar ao conjunto matemático)
+    - Não possuem índice
+    - Não possuem elementos repetidos
+    - Para declarar o set "setOf(element1, element2,...)"
+    - Para unir dois sets "set1 union set2 || set1.union(set2)"
+    - Para subtrair dois sets "set subtract set || set1.subtract(set2)"
+    - Para pegar o incomum nos dois sets "set intersect set || set1.subtract(set2)"
+- **Maps**
+    - Não possuem índice
+    - É uma coleção que carrega a estrutura de chave e valor
+    - Para declarar o map "mapOf(Pair(chave, valor), chave to valor,...)"
+    - Para capturar todas as chaves "map.keys"
+    - Para capturar todas os valores "map.values"
+    - Os comportamentos são feitos a partir da chave "map[chave]" essa iteração sempre retonar o valor opcional "valor?"
+    - Conseguimos realizar atribuição e atualização a partir da chave "map[chave]=valor"
+    - Também onseguimos realizar atribuição e atualização dessa forma "map.put(chave, valor)"
+    - Para só adicionar caso não exista valor "map.putIfAbsent(chave, valor)"
+    - Para remover um elemento "map.remove(chave)"
+    - Para remove rum elemento caso ele tenha um valor específico "map.remove(chave, valor)"
+    - Para pegar um valor de uma chave sem verificação (null se a chave não existir) podemos "map.get(key)"
+    - Para pegar um valor de uma chave com verificação (exception se a chave não existir) podemos "map.getValue(key)"
+    - Para executar algo e capturar um valor caso a chave não exista podemos usar
+      "map.getOrElse(chave, {função lambda -> valor})"
+    - Para capturar diretamente um valor caso a chave não exista podemos usar "map.getOrDefault(chave, valor)"
+    - Para filtrar em um map "map.filter {(chave, valor) -> condição}"
+    - Para adicionar ou remover sem modificar a fonte podemos usar "map + Pair(chave, valor) || map - chave"
+    - Para adicionar ou alterar uma coleção ao map "map.putAll(coleção)"
+    - Para adicionar ou alterar uma coleção ao map "map += (coleção)"
+    - Para remover do map "map.remove(chave || valor(em caso de valor remove o primeiro))"
+    - Para remover do map "map -= chave"
+- **Transformação de Coleções**
+    - Para associar uma lista ou set para um map "lista.associate {propriedade -> Pair(valor, chave)}"
+    - Para associar uma lista ou set para um map por uma propriedade "lista.associateBy {propriedade -> chave}"
+    - Para associar uma lista ou set para um map por uma função "lista.associateWith {propriedade -> função}"
+    - Para agrupar uma coleção "map.groupBy {propriedade -> função}" podemos posteriormente usar o resultado "
+      map[agrupamento]"
+
