@@ -108,7 +108,7 @@
     - Elvis Operator(Permite adicionar retorno específico caso a variavel seja nula ? varaivel :? retorno)
     - Safe Cast(Garante que caso a variavel n seja daquele tipo, retornar nulo "as?")
 
-### Lições aprendidas sobre Programação Funcional no Kotlin (Parte 5)
+### Lições aprendidas sobre Coleções no Kotlin (Parte 5)
 
 - **Arrays**
     - Para declarar um Array usamos "TipoArray(tamanho_array)"
@@ -147,7 +147,7 @@
     - Para filtrar elementos não nulos de uma lista "lista.filterNotNull()"
     - Para agrupar uma lista por um atributo em específico "lista.groupBy {atributo}"
 
-### Lições aprendidas sobre Programação Funcional no Kotlin (Parte 6)
+### Lições aprendidas sobre Coleções no Kotlin (Parte 6)
 
 - **Coleções**
     - Iterable -> Collection -> List e Set
@@ -194,3 +194,36 @@
     - Para agrupar uma coleção "map.groupBy {propriedade -> função}" podemos posteriormente usar o resultado "
       map[agrupamento]"
 
+### Lições aprendidas sobre Programação Funcional no Kotlin (Parte 7)
+
+- **Programação Funcional**
+    - Trabalha com a ideia de imutabilidade
+- **Tipo Função**
+    - Para declarar uma função dentro de uma variavel primeiro declaramos a função normalmente e depois               
+      "val variavel: (Element1, Element2,...) -> Retorno = ::nomeFunção"
+    - Para declarar uma classe dentro de uma variavel primeiro declaramos a classe
+      "class Classe: (Element1) -> retorno {implementar invoke}" e depois               
+      "val variavel: (Element1) -> Retorno = Classe()"
+    - Para utilizar uma função lambda por meio de uma variavel "val variavel: (Element1) -> Retorno = {execução}"
+    - Para utilizar uma função anonima por meio de uma variavel "val variavel: (Element1) -> Retorno = fun(): Retorno
+      {execução}"
+    - Para utilizar mais de um retorno numa função lambda "val variavel: (Element1) -> Retorno = label@
+      {...return1@label ...return2@label}"
+- **Funções Higher-Order**
+    - São funções que recebem outra função com parâmetro
+- **Funções de Escopo**
+    - São funções que possuem um pequeno bloco de escopo a ser executado
+    - Funções que recebem o this, "run, with, apply", não precisam que seja usado o this para se referir ao objeto de
+      contexto
+    - Funções que recebem o it, "let, also", precisam que seja usado o it para se referir ao objeto de contexto
+    - Funções retornam o objeto de contexto "also, apply"
+    - Let usado quando pretendemos trabalhar no resultado de uma ou mais funções
+    - With (Não é uma função de extensão) "with(Objeto) {função}" usado quando precisamos não devolver nada ou devolver
+      uma computação (não temos it, e sim o this podendo usar as propriedas do objeto diretamente)
+    - Run (Invocado igual ao let(função de extensão) ou não) usamos quando queremos atribuições e ao final computações
+    - Apply (Invocado igual ao let(função de extensão)) usamos quando queremos devolver o próprio objeto ao final da
+      execução
+    - Also (Invocado igual ao let(função de extensão)) possui o it para referenciar o objeto, usamos geralmente para
+      imprimir ou loggar algo
+    - TakeIf (Invocado igual ao let(função de extensão)) retonar o objeto caso verdadeiro
+    - TakeUnless (Invocado igual ao let(função de extensão)) retonar o objeto caso falso
